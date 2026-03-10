@@ -7,9 +7,7 @@ describe(`Function 'arrayReverse':`, () => {
     expect(arrayReverse).toBeInstanceOf(Function);
   });
 
-  it(`should return an array`, () => {
-
-  });
+  it(`should return an array`, () => {});
 
   it(`should return an empty string
     if original array consists of an empty string`, () => {
