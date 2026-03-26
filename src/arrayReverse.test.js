@@ -1,18 +1,41 @@
 'use strict';
 
-describe(`Function 'arrayReverse':`, () => {
+describe('arrayReverse', () => {
   const arrayReverse = require('./arrayReverse');
 
   it(`should be declared`, () => {
     expect(arrayReverse).toBeInstanceOf(Function);
   });
 
-  it(`should return an array`, () => {});
-
-  it(`should return an empty string
-    if original array consists of an empty string`, () => {
-    expect(arrayReverse(['Mate', 'Academy'])).toEqual(['ymed', 'acAetaM']);
+  it(`should return an array`, () => {
+    expect(arrayReverse([])).toBeInstanceOf(Array);
   });
 
-  // write more tests here
+  it(`should return an empty string if original array consists of an empty string`, () => {
+    expect(arrayReverse([''])).toEqual(['']);
+  });
+
+  it(`should reverse letters in a single word`, () => {
+    expect(arrayReverse(['abc'])).toEqual(['cba']);
+  });
+
+  it(`should reverse letters in multiple words`, () => {
+    expect(arrayReverse(['abc', 'def'])).toEqual(['fed', 'cba']);
+  });
+
+  it(`should handle words of different lengths`, () => {
+    expect(arrayReverse(['a', 'bc', 'def'])).toEqual(['f', 'ed', 'cba']);
+  });
+
+  it(`should handle array with empty strings in between`, () => {
+    expect(arrayReverse(['a', '', 'bc'])).toEqual(['c', '', 'ba']);
+  });
+
+  it(`should handle array with all empty strings`, () => {
+    expect(arrayReverse(['', '', ''])).toEqual(['', '', '']);
+  });
+
+  it(`should handle single-character words`, () => {
+    expect(arrayReverse(['x', 'y', 'z'])).toEqual(['z', 'y', 'x']);
+  });
 });
