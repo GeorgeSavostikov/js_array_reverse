@@ -38,4 +38,21 @@ describe('arrayReverse', () => {
   it(`should handle single-character words`, () => {
     expect(arrayReverse(['x', 'y', 'z'])).toEqual(['z', 'y', 'x']);
   });
+
+  it(`should reverse letters correctly in a single word containing numbers or symbols`, () => {
+    expect(arrayReverse(['Hell0'])).toEqual(['0lleH']);
+  });
+
+  it(`should reverse letters correctly across multiple words of different lengths`, () => {
+    expect(arrayReverse(['Mate', 'Academy'])).toEqual(['ymed', 'acAetaM']);
+  });
+
+  it(`should reverse letters correctly for a sentence with single-character words and punctuation`, () => {
+    expect(arrayReverse(['I', 'am', 'a', 'student!'])).toEqual([
+      '!',
+      'tn',
+      'e',
+      'dutsamaI',
+    ]);
+  });
 });
